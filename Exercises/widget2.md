@@ -49,7 +49,7 @@ ___
 
     ![](img/ex2/widg2_pc5.png)
     
-    ```
+    ```javascript
     'dijit/_WidgetsInTemplateMixin',
     'esri/graphicsUtils',
     'esri/graphic',
@@ -129,7 +129,7 @@ ___
     
 12)	The second function, to be placed underneath the previous **_GetProjectList** function, is called **_ZoomCounty** and is the code that will zoom the map to the county and highlight it. 
 
-    ```
+    ```javascript
     //Function to zoom to county
     _ZoomCounty: function () {
         //Query the selected county
@@ -240,4 +240,4 @@ ___
 
      ![](img/ex2/widg2_pc6.png)
      
-24)	That’s it!  If you have some time remaining play with modifying the widget.  Look into the ESRI libraries contained in the widget.js file.  Guides on this can be found on the ArcGIS API for JavaScript website.
+24)	That’s it!  If you have some time remaining play with modifying the widget.  Look into the ESRI libraries contained in the **widget.js** file.  Guides on this can be found on the ArcGIS API for JavaScript website.
