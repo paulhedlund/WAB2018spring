@@ -45,7 +45,7 @@ ___
 
     ![](img/ex2/widg2_pc4.png)
     
-7) Part of the ArcGIS JavaScript API framework is something called AMD (Asynchronous Module Definition).  Part of the AMD process is adding ESRI libraries ins declarative process.  Add the following code to the top of the **widget.js** file underneath the ‘jimu/BaseWidget’ item in define.
+7) Part of the ArcGIS JavaScript API framework is something called AMD (Asynchronous Module Definition).  Part of the AMD process is adding ESRI libraries in the declarative process.  Add the following code to the top of the **widget.js** file underneath the ‘jimu/BaseWidget’ item in define.
 
     ![](img/ex2/widg2_pc5.png)
     
