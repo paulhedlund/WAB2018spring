@@ -46,3 +46,149 @@ ___
     ![](img/ex2/widg2_pc4.png)
     
 7)	Part of the ArcGIS JavaScript API framework is something called AMD (Asynchronous Module Definition).  Part of the AMD process is adding ESRI libraries ins declarative process.  Add the following code to the top of the **widget.js** file underneath the ‘jimu/BaseWidget’ item in define.
+
+    ![](img/ex2/widg2_pc5.png)
+    
+    ```
+    'dijit/_WidgetsInTemplateMixin',
+    'esri/graphicsUtils',
+    'esri/graphic',
+    'dojo/store/Memory',
+    'esri/tasks/query',
+    'esri/tasks/QueryTask',
+    'esri/symbols/SimpleFillSymbol',
+    'esri/symbols/SimpleLineSymbol',
+    'dojo/_base/Color',
+    'dijit/registry',
+    'dijit/form/FilteringSelect',
+    'jimu/dijit/Message',
+    'dojo/on'
+    ```
+
+8)	Then in the main function add the following.
+
+    ```
+    function(declare,BaseWidget,_WidgetsInTemplateMixin,graphicsUtils,Graphic,Memory,Query,QueryTask,SimpleFillSymbol,SimpleLineSymbol,ColorDojo,registry,FilteringSelect,Message,on)
+    ```
+    
+9)	Modify the declare line from return declare([BaseWidget], { to the text here below.
+
+    ```
+    return declare([BaseWidget, _WidgetsInTemplateMixin], {
+    ```
+    
+ 10) The code at the top of the page should look like this.  Verify all commas and semicolons in the correct place.
+ 
+     ![](img/ex2/widg2_pc6.png)
+     
+ 11)	There will be two more custom functions to add to the widget.js file. The first on is called _GetProjectList.   This will add all counties into a dropdown FilteringSelect dojo widget. Add the syntax below for this code.  It can be added after the startup function, like so:
+ 
+     ```
+    startup: function() {
+        this.inherited(arguments);
+    },
+    _GetProjectList: function () {
+        //Query the counties
+        var item = "NAME";
+        var queryTask = new QueryTask
+        ("https://services2.arcgis.com/rwqARsO7kmPlpMQS/ArcGIS/rest/services/MNcounties/FeatureServer/0"); //service
+        var query = new Query();
+        query.where = "1=1"; //query to get all counties
+        query.returnGeometry = false;
+        query.outFields = [ item ];
+        query.orderByFields = [ item ];
+        queryTask.execute(query, getStoreQueryValues);
+
+        //Loop through and store all MN counties in dropdown box
+        function getStoreQueryValues(results){
+            var data = {
+                identifier: 'id', //This field needs to have unique values
+                label: 'name', //Name field for display.
+                items: []
+            };
+
+            var storeItem = new Memory({
+                data: data
+            });
+
+            var itemStr = "";
+            for (var i = 0; i < results.features.length; i++) {
+                if(itemStr.indexOf(results.features[i].attributes[item]) == -1){
+                    itemStr += "{id: '" + (i + 1) + "',name:'" + results.features[i].attributes[item] + "'},";
+                    storeItem.put({'id': (i + 1),'name': results.features[i].attributes[item]});
+                }
+            }
+            if (registry.byId("MNcountylist")) {
+                registry.byId("MNcountylist").reset();
+                registry.byId("MNcountylist").store = storeItem;
+            }
+        }
+    },
+    ```
+    
+12)	The second function, to be placed underneath the previous _GetProjectList function, is called _ZoomCounty and is the code that will zoom the map to the county and highlight it. 
+
+    ```
+    //Function to zoom to county
+    _ZoomCounty: function () {
+        //Query the selected county
+        var queryTask = new QueryTask("https://services2.arcgis.com/rwqARsO7kmPlpMQS/ArcGIS/rest/services/MNcounties/FeatureServer/0"); //service
+        var query = new Query();
+        query.where = "NAME = '" + registry.byId("MNcountylist").displayedValue + "'";	query.returnGeometry = true;
+        query.outFields = ["NAME"];
+
+        map = this.map;
+
+        query.outSpatialReference = {
+            wkid: 102100
+        };
+        on(queryTask, "complete", function(evt){
+            zoomToResults(evt, map);
+        });
+        queryTask.execute(query, showSpatialResults);
+
+        //Create graphic for zoom results
+        function showSpatialResults(results){
+            ClearSearchGraphics(map);
+            var fieldsSelectionSymbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,new SimpleLineSymbol(SimpleLineSymbol.STYLE_DASHDOT, new ColorDojo([255,255,0]), 6),new ColorDojo([255,255,0,0.35]));
+            map.graphics.add(new Graphic(results.features[0].geometry, fieldsSelectionSymbol));
+        }
+        //zoom to the location of the result
+        function zoomToResults(evt,map){
+            var featureSet = evt || {};
+            var features = featureSet.featureSet.features || [];
+            if (features.length > 0) {
+                var extent = graphicsUtils.graphicsExtent(features);
+                if (extent) {
+                    map.setExtent(extent.expand(1.5), true);
+                }
+            }
+            else {
+                new Message({message: 'The county was not found on the map!',titleLabel: "County Widget Error!",autoHeight: true});
+            }
+        }
+
+        //clear previous search yellow polygon
+        function ClearSearchGraphics(map){
+            if (map.graphics) {
+                map.graphics.clear();
+            }
+        }
+    }
+    ```
+    
+ 13)	Then, in the postCreate event, located above the functions we just added, add the function call.
+ 
+     ```
+    this._GetProjectList();
+    ```
+    
+         ![](img/ex2/widg2_pc6.png)
+         
+  14)	Now let’s test the display of the widget. Start the test URL again at “http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json”.  Find the County Widget and test it.
+  
+          ![](img/ex2/widg2_pc7.png)
+          
+  15)	Did you get this?  Use the developer tools via F12 to debug the error.  A missing comma or semicolon can cause the error.
+  
+          ![](img/ex2/widg2_pc8.png)
