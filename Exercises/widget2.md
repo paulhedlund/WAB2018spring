@@ -9,15 +9,15 @@ ___
     bbd3477a3f0944a48881f681a8530be2
     ```
 
-    ![](img/ex1/widg2_pc1.png)
+    ![](img/ex2/widg2_pc1.png)
 
 3)	This widget will not require some template files.  Therefore, remove the **config.json** file and **nls** folder.
 
-    ![](img/ex1/widg2_pc2.png)
+    ![](img/ex2/widg2_pc2.png)
 
 4)	Edit the **Manifest.json** file to not include some properties.  Have the parameters similar to what is seen below.
 
-    ![](img/ex1/widg2_pc3.png)
+    ![](img/ex2/widg2_pc3.png)
     
 5)	This widget will require some HTML syntax containing some DOJO/DIJIT widgets. First, remove any existing text in the **widget.html** file.  Then, copy the text below. 
 
@@ -43,6 +43,6 @@ ___
     
 6)	Now let’s spend some time adding code to the **widget.js** file.  This file will contain the most logic of any file for the widget.  First un-comment the **postCreate** and **startup** event functions.  Remove all other commented functions including **onOpen**, **onClose**, etc.  These events will not be used for this widget.
 
-    ![](img/ex1/widg2_pc4.png)
+    ![](img/ex2/widg2_pc4.png)
     
 7)	Part of the ArcGIS JavaScript API framework is something called AMD (Asynchronous Module Definition).  Part of the AMD process is adding ESRI libraries ins declarative process.  Add the following code to the top of the **widget.js** file underneath the ‘jimu/BaseWidget’ item in define.
