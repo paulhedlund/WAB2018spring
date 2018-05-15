@@ -83,11 +83,12 @@ ___
      ![](img/ex2/widg2_pc6.png)
      
 11) There will be two more custom functions to add to the **widget.js** file. The first on is called **_GetProjectList**.   This will add all counties into a dropdown FilteringSelect dojo widget. Add the syntax below for this code.  It can be added after the **startup** function, like so:
- 
-     ```javascript
+
     startup: function() {
         this.inherited(arguments);
     },
+ 
+     ```javascript
     _GetProjectList: function () {
         //Query the counties
         var item = "NAME";
