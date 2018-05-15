@@ -1,9 +1,9 @@
 # Custom Widget #2 - Zoom to Minnesota County
 ___
 
-1)	Start by going through steps #1 to #13 in **The Terrible Widget** except call it the widget **CountyWidget**.  Select a different Icon as well.
+1) Start by going through steps #1 to #13 in **The Terrible Widget** except call it the widget **CountyWidget**.  Select a different Icon as well.
 
-2)	Add AGO map to the sample config.  This is done by navigating to **\\client\stemapp\sample-configs**. Open the config-demo.json file and go to **map -> itemId** and change the Web Map ID to 
+2) Add AGO map to the sample config.  This is done by navigating to **\\client\stemapp\sample-configs**. Open the config-demo.json file and go to **map -> itemId** and change the Web Map ID to 
 
     ```
     bbd3477a3f0944a48881f681a8530be2
@@ -11,15 +11,15 @@ ___
 
     ![](img/ex2/widg2_pc1.png)
 
-3)	This widget will not require some template files.  Therefore, remove the **config.json** file and **nls** folder.
+3) This widget will not require some template files.  Therefore, remove the **config.json** file and **nls** folder.
 
     ![](img/ex2/widg2_pc2.png)
 
-4)	Edit the **Manifest.json** file to not include some properties.  Have the parameters similar to what is seen below.
+4) Edit the **Manifest.json** file to not include some properties.  Have the parameters similar to what is seen below.
 
     ![](img/ex2/widg2_pc3.png)
     
-5)	This widget will require some HTML syntax containing some DOJO/DIJIT widgets. First, remove any existing text in the **widget.html** file.  Then, copy the text below. 
+5) This widget will require some HTML syntax containing some DOJO/DIJIT widgets. First, remove any existing text in the **widget.html** file.  Then, copy the text below. 
 
     ```
     <div>
@@ -41,11 +41,11 @@ ___
     </div>
     ```
     
-6)	Now let’s spend some time adding code to the **widget.js** file.  This file will contain the most logic of any file for the widget.  First un-comment the **postCreate** and **startup** event functions.  Remove all other commented functions including **onOpen**, **onClose**, etc.  These events will not be used for this widget.
+6) Now let’s spend some time adding code to the **widget.js** file.  This file will contain the most logic of any file for the widget.  First un-comment the **postCreate** and **startup** event functions.  Remove all other commented functions including **onOpen**, **onClose**, etc.  These events will not be used for this widget.
 
     ![](img/ex2/widg2_pc4.png)
     
-7)	Part of the ArcGIS JavaScript API framework is something called AMD (Asynchronous Module Definition).  Part of the AMD process is adding ESRI libraries ins declarative process.  Add the following code to the top of the **widget.js** file underneath the ‘jimu/BaseWidget’ item in define.
+7) Part of the ArcGIS JavaScript API framework is something called AMD (Asynchronous Module Definition).  Part of the AMD process is adding ESRI libraries ins declarative process.  Add the following code to the top of the **widget.js** file underneath the ‘jimu/BaseWidget’ item in define.
 
     ![](img/ex2/widg2_pc5.png)
     
@@ -65,23 +65,22 @@ ___
     'dojo/on'
     ```
 
-8)	Then in the main function add the following.
+8) Then in the main function add the following.
 
-    ```
-    function(declare,BaseWidget,_WidgetsInTemplateMixin,graphicsUtils,Graphic,Memory,Query,QueryTask,SimpleFillSymbol,SimpleLineSymbol,ColorDojo,registry,FilteringSelect,Message,on)
+    ```  function(declare,BaseWidget,_WidgetsInTemplateMixin,graphicsUtils,Graphic,Memory,Query,QueryTask,SimpleFillSymbol,SimpleLineSymbol,ColorDojo,registry,FilteringSelect,Message,on)
     ```
     
-9)	Modify the declare line from return declare([BaseWidget], { to the text here below.
+9) Modify the declare line from return declare([BaseWidget], { to the text here below.
 
     ```
     return declare([BaseWidget, _WidgetsInTemplateMixin], {
     ```
     
- 10) The code at the top of the page should look like this.  Verify all commas and semicolons in the correct place.
+10) The code at the top of the page should look like this.  Verify all commas and semicolons in the correct place.
  
      ![](img/ex2/widg2_pc6.png)
      
- 11)	There will be two more custom functions to add to the widget.js file. The first on is called _GetProjectList.   This will add all counties into a dropdown FilteringSelect dojo widget. Add the syntax below for this code.  It can be added after the startup function, like so:
+11) There will be two more custom functions to add to the widget.js file. The first on is called _GetProjectList.   This will add all counties into a dropdown FilteringSelect dojo widget. Add the syntax below for this code.  It can be added after the startup function, like so:
  
      ```javascript
     startup: function() {
@@ -177,18 +176,66 @@ ___
     }
     ```
     
- 13)	Then, in the postCreate event, located above the functions we just added, add the function call.
+13) Then, in the postCreate event, located above the functions we just added, add the function call.
  
      ```javascript
     this._GetProjectList();
     ```
     
-         ![](img/ex2/widg2_pc5.png)
+     ![](img/ex2/widg2_pc6.png)
          
-  14)	Now let’s test the display of the widget. Start the test URL again at “http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json”.  Find the County Widget and test it.
+14) Now let’s test the display of the widget. Start the test URL again at “http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json”.  Find the County Widget and test it.
   
-          ![](img/ex2/widg2_pc6.png)
+     ![](img/ex2/widg2_pc6.png)
           
-  15)	Did you get this?  Use the developer tools via F12 to debug the error.  A missing comma or semicolon can cause the error.
+15) Did you get this?  Use the developer tools via F12 to debug the error.  A missing comma or semicolon can cause the error.
   
-          ![](img/ex2/widg2_pc7.png)
+     ![](img/ex2/widg2_pc6.png)
+          
+16) The county list dropdown should contain a list of all Minnesota counties in alphabetical order.
+  
+     ![](img/ex2/widg2_pc6.png)
+       
+17) Select a county and zoom to it by clicking Zoom to County.   The map should zoom to the county selected and highlight it in yellow.
+  
+     ![](img/ex2/widg2_pc6.png)
+       
+18) Try entering an invalid county name.  A trapped error message should appear.
+ 
+     ![](img/ex2/widg2_pc6.png)
+     
+19) Now let’s clean up the styling a little bit by adding the following to the style.css file.  Add the following syntax to the file.
+ 
+    ```
+    #filterBlock{
+      border-top: 3px solid;
+      padding-top:10px;
+    }
+
+    #buttonBlock{
+      margin-top:10px; 
+    }
+
+    #MNcountylist{
+      width:190px;
+    }
+
+    #btnVote{
+      width:175px;
+      text-align:center;
+    }
+    ```
+ 
+20) The change in the CSS should be as seen below.
+ 
+     ![](img/ex2/widg2_pc6.png)
+     
+21)	Finally, to deploy this widget for use with an app place the entire folder in **\client\stemapp\widgets**
+
+27)	Before the changes take effect you will need to restart your node session. To close your node session, close the startup.bat file and start a new node session by opening the startup.bat file.
+
+28)	Once you’ve started a new node session, add a new widget and the new widget should appear in the list of available widgets.
+
+     ![](img/ex2/widg2_pc6.png)
+     
+29)	That’s it!  If you have some time remaining play with modifying the widget.  Look into the ESRI libraries contained in the widget.js file.  Guides on this can be found on the ArcGIS API for JavaScript website.
