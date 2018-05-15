@@ -88,7 +88,7 @@ ___
     startup: function() {
         this.inherited(arguments);   
     },
-    '''
+    ```
     
     After startup function add this:
  
