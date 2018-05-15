@@ -67,7 +67,7 @@ ___
     }
     ```
     
-16)	The text should turn to red:
+16)	Refresh the page at this path **http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json.** The text should turn to red:
 
     ![](img/ex1/widg1_pc9.png)
     
