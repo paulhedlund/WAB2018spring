@@ -14,19 +14,20 @@ ___
     ![](img/ex1/widg1_pc2.png)
     
 5)	Un-comment the following: 
-    a.	**baseClass**:  change **jimu-widget-customwidget** to **jimu-widget-terriblewidget**. Note that JavaScript is case-sensitive.  Also make sure         a comma exists at the end of this line.
+    a.	**baseClass**:  change **jimu-widget-customwidget** to **jimu-widget-terriblewidget**. Note that JavaScript is case-sensitive.           Also make sure a comma exists at the end of this line.
     b.	**name:** un-comment this line and change to ‘Terrible Widget’
+   
     ![](img/ex1/widg1_pc3.png)
     
 6)	Save the **Widget.js** file and close it.
 
 7)	Open **Widget.html** in your text editor.  Copy the following HTML syntax (Change the name to your name or change the whole phrase if you so choose):
 
-```
-<div>
-    <div>Your name’s Terrible Widget</div>
-</div>
-```
+    ```
+    <div>
+        <div>Your name’s Terrible Widget</div>
+    </div>
+    ```
 
 8)	Save the **Widget.html** and close it.
 
