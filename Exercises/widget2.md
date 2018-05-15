@@ -3,7 +3,7 @@ ___
 
 1) Start by going through steps #1 to #13 in **The Terrible Widget** except call it the widget **CountyWidget**.  Select a different Icon as well.
 
-2) Add AGO map to the sample config.  This is done by navigating to **\\\client\stemapp\sample-configs**. Open the config-demo.json file and go to **map -> itemId** and change the Web Map ID to 
+2) Add AGO map to the sample config.  This is done by navigating to **\\\client\stemapp\sample-configs**. Open the **config-demo.json** file and go to **map -> itemId** and change the Web Map ID to 
 
     ```
     e3d3fc98764d4c54b5f7698304a92437
