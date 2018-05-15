@@ -57,7 +57,7 @@ ___
     
     In this case, there may be an error in your code syntax.  View your browsers developer tools by clicking **F12**.  Read the errors in the console to debug the error.
     
-14)	Let’s change the color of the text with CSS.  Navigate to **\\client\stemapp\widgets\samplewidgets\TerribleWidget\css\style.css**
+14)	Let’s change the color of the text with CSS.  Navigate to **\\\client\stemapp\widgets\samplewidgets\TerribleWidget\css\style.css**
 
 15)	Add the following text to change the text to red.
 
