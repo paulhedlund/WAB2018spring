@@ -13,4 +13,4 @@ The PowerPoint slides are located [here][slides]
 
 [lab1]: ./Exercises/widget1.md
 [lab2]: ./Exercises/widget2.md
-[slides]: ./Slides/Web AppBuilder for ArcGIS_2018.pptx
+[slides]: ./Slides/Web_AppBuilder_for_ArcGIS_2018.pptx
