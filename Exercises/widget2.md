@@ -83,7 +83,7 @@ ___
      
  11)	There will be two more custom functions to add to the widget.js file. The first on is called _GetProjectList.   This will add all counties into a dropdown FilteringSelect dojo widget. Add the syntax below for this code.  It can be added after the startup function, like so:
  
-     ```
+     ```javascript
     startup: function() {
         this.inherited(arguments);
     },
@@ -179,16 +179,16 @@ ___
     
  13)	Then, in the postCreate event, located above the functions we just added, add the function call.
  
-     ```
+     ```javascript
     this._GetProjectList();
     ```
     
-         ![](img/ex2/widg2_pc6.png)
+         ![](img/ex2/widg2_pc5.png)
          
   14)	Now let’s test the display of the widget. Start the test URL again at “http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json”.  Find the County Widget and test it.
   
-          ![](img/ex2/widg2_pc7.png)
+          ![](img/ex2/widg2_pc6.png)
           
   15)	Did you get this?  Use the developer tools via F12 to debug the error.  A missing comma or semicolon can cause the error.
   
-          ![](img/ex2/widg2_pc8.png)
+          ![](img/ex2/widg2_pc7.png)
