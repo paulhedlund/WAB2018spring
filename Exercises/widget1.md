@@ -92,3 +92,17 @@ ___
 20)	Test the widget again in the viewer.
 
     ![](img/ex1/widg1_pc10.png)
+    
+21)	Edit the **Manifest.json** file.  The name should match the name of your widget folder.  You can change the **author** and **description**.  Also, change the properties settings as seen below.
+
+    ![](img/ex1/widg1_pc11.png)
+    
+22)	Finally, to deploy this widget for use with an app place the entire folder in \\client\stemapp\widgets
+
+23)	Before the changes take effect you will need to restart your node session. To close your node session, close the startup.bat file and start a new node session by opening the startup.bat file.
+
+24)	Once you’ve started a new node session, add a new widget and the new widget should appear in the list of available widgets.
+
+    ![](img/ex1/widg1_pc12.png)
+    
+25)	For more information, check out Esri’s ‘Create a custom in-panel widget’ tutorial.
