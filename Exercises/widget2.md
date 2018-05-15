@@ -72,7 +72,7 @@ ___
     SimpleFillSymbol,SimpleLineSymbol,ColorDojo,registry,FilteringSelect,Message,on)
     ```
     
-9) Modify the declare line from return declare([BaseWidget], { to the text here below.
+9) Modify the declare line from **return declare([BaseWidget], {** to the text here below.
 
     ```
     return declare([BaseWidget, _WidgetsInTemplateMixin], {
@@ -82,7 +82,7 @@ ___
  
      ![](img/ex2/widg2_pc6.png)
      
-11) There will be two more custom functions to add to the widget.js file. The first on is called _GetProjectList.   This will add all counties into a dropdown FilteringSelect dojo widget. Add the syntax below for this code.  It can be added after the startup function, like so:
+11) There will be two more custom functions to add to the **widget.js** file. The first on is called **_GetProjectList**.   This will add all counties into a dropdown FilteringSelect dojo widget. Add the syntax below for this code.  It can be added after the **startup** function, like so:
  
      ```javascript
     startup: function() {
@@ -127,7 +127,7 @@ ___
     },
     ```
     
-12)	The second function, to be placed underneath the previous _GetProjectList function, is called _ZoomCounty and is the code that will zoom the map to the county and highlight it. 
+12)	The second function, to be placed underneath the previous **_GetProjectList** function, is called **_ZoomCounty** and is the code that will zoom the map to the county and highlight it. 
 
     ```
     //Function to zoom to county
@@ -178,7 +178,7 @@ ___
     }
     ```
     
-13) Then, in the postCreate event, located above the functions we just added, add the function call.
+13) Then, in the **postCreate** event, located above the functions we just added, add the function call.
  
      ```javascript
     this._GetProjectList();
@@ -186,7 +186,7 @@ ___
     
      ![](img/ex2/widg2_pc6.png)
          
-14) Now let’s test the display of the widget. Start the test URL again at “http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json”.  Find the County Widget and test it.
+14) Now let’s test the display of the widget. Start the test URL again at **“http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json”**.  Find the County Widget and test it.
   
      ![](img/ex2/widg2_pc6.png)
           
@@ -198,7 +198,7 @@ ___
   
      ![](img/ex2/widg2_pc6.png)
        
-17) Select a county and zoom to it by clicking Zoom to County.   The map should zoom to the county selected and highlight it in yellow.
+17) Select a county and zoom to it by clicking **Zoom to County**.   The map should zoom to the county selected and highlight it in yellow.
   
      ![](img/ex2/widg2_pc6.png)
        
@@ -206,7 +206,7 @@ ___
  
      ![](img/ex2/widg2_pc6.png)
      
-19) Now let’s clean up the styling a little bit by adding the following to the style.css file.  Add the following syntax to the file.
+19) Now let’s clean up the styling a little bit by adding the following to the **style.css** file.  Add the following syntax to the file.
  
     ```
     #filterBlock{
