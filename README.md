@@ -1,4 +1,9 @@
 # Web AppBuilder for ArcGIS: Knowing Your Options - 2018 Spring Workshop
-Add info here
+___
 
-This site was built using [Thingy](http://www.google.com).
+## Exercises ##
+- [Custom Widget #1 - The Terrible Widget][slides]
+- [Custom Widget #2 - Zoom to Minnesota County][labs]
+
+## Slides ##
+The PowerPoint slides are located here
