@@ -232,12 +232,15 @@ ___
  
      ![](img/ex2/widg2_pc13.png)
      
+    CSS:
+     ![](img/ex2/widg2_pc14.png)  
+     
 21)	Finally, to deploy this widget for use with an app place the entire folder in **\client\stemapp\widgets**
 
 22)	Before the changes take effect you will need to restart your node session. To close your node session, close the startup.bat file and start a new node session by opening the startup.bat file.
 
 23)	Once you’ve started a new node session, add a new widget and the new widget should appear in the list of available widgets.
 
-     ![](img/ex2/widg2_pc14.png)
+     ![](img/ex2/widg2_pc15.png)
      
-24)	That’s it!  If you have some time remaining play with modifying the widget.  Look into the ESRI libraries contained in the **widget.js** file.  Guides on this can be found on the ArcGIS API for JavaScript website.
+24)	That’s it!  If you have some time remaining play with modifying the widget.  Look into the ESRI libraries contained in the **widget.js** file.  Guides on this can be found on the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/3/jsapi/) website.
