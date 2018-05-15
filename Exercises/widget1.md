@@ -35,7 +35,7 @@ ___
 
     ![](img/ex1/widg1_pc4.png)        ![](img/ex1/widg1_pc5.png)   
 
-10)	Add the widget information to the app config JSON file.  This is done by navigating to **<u>\\client\stemapp\sample -configs\config-demo.json</u>.**  Find widgetPool -> widgets and add the following JSON to the end of it.  Make sure all required commas exist to insure proper JSON format.
+10)	Add the widget information to the app config JSON file.  This is done by navigating to **\\client\stemapp\sample -configs\config-demo.json.**  Find widgetPool -> widgets and add the following JSON to the end of it.  Make sure all required commas exist to insure proper JSON format.
 
     ```
     {
@@ -45,7 +45,7 @@ ___
     ```
     ![](img/ex1/widg1_pc6.png)
     
-11)	At this point let’s test the widget to see your progress.  Test the widget via this path http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json
+11)	At this point let’s test the widget to see your progress.  Test the widget via this path **http://[your host name:3344]/webappviewer/?config=sample-configs/config-demo.json**
 
 12)	In the viewer, you should see a test button with your icon. Click on that button to verify your widget appears with the correct HTML.
 
@@ -97,7 +97,7 @@ ___
 
     ![](img/ex1/widg1_pc11.png)
     
-22)	Finally, to deploy this widget for use with an app place the entire folder in \\client\stemapp\widgets
+22)	Finally, to deploy this widget for use with an app place the entire folder in **\\client\stemapp\widgets**
 
 23)	Before the changes take effect you will need to restart your node session. To close your node session, close the startup.bat file and start a new node session by opening the startup.bat file.
 
@@ -105,4 +105,4 @@ ___
 
     ![](img/ex1/widg1_pc12.png)
     
-25)	For more information, check out Esri’s ‘Create a custom in-panel widget’ tutorial.
+25)	For more information, check out Esri’s [https://developers.arcgis.com/web-appbuilder/sample-code/create-custom-in-panel-widget.htm) tutorial.
