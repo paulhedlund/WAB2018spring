@@ -2,8 +2,11 @@
 ___
 
 ## Exercises ##
-- [Custom Widget #1 - The Terrible Widget][./Exercises/widget1.md]
-- [Custom Widget #2 - Zoom to Minnesota County][./Exercises/widget2.md]
+- [Custom Widget #1 - The Terrible Widget][lab1]
+- [Custom Widget #2 - Zoom to Minnesota County][lab2]
 
 ## Slides ##
 The PowerPoint slides are located here
+
+[lab1]: ./Exercises/widget1.md
+[lab2]: ./Exercises/widget2.md
