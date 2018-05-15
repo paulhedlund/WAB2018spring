@@ -71,7 +71,7 @@ ___
 
     ![](img/ex1/widg1_pc9.png)
     
-17)	Next let’s make the text configurable.  **\\client\stemapp\widgets\samplewidgets\TerribleWidget\config.json**
+17)	Next let’s make the text configurable.  **\\\client\stemapp\widgets\samplewidgets\TerribleWidget\config.json**
 
 18)	Add the following text to make to tool configurable.
 
@@ -97,7 +97,7 @@ ___
 
     ![](img/ex1/widg1_pc11.png)
     
-22)	Finally, to deploy this widget for use with an app place the entire folder in **\\client\stemapp\widgets**
+22)	Finally, to deploy this widget for use with an app place the entire folder in **\\\client\stemapp\widgets**
 
 23)	Before the changes take effect you will need to restart your node session. To close your node session, close the startup.bat file and start a new node session by opening the startup.bat file.
 
