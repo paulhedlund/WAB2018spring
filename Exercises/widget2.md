@@ -230,10 +230,11 @@ ___
  
 20) The change in the CSS should be as seen below.
  
-     ![](img/ex2/widg2_pc13.png)
+    ![](img/ex2/widg2_pc13.png)
      
     CSS:
-     ![](img/ex2/widg2_pc14.png)  
+    
+    ![](img/ex2/widg2_pc14.png)  
      
 21)	Finally, to deploy this widget for use with an app place the entire folder in **\client\stemapp\widgets**
 
