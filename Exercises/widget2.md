@@ -67,7 +67,9 @@ ___
 
 8) Then in the main function add the following.
 
-    ```  function(declare,BaseWidget,_WidgetsInTemplateMixin,graphicsUtils,Graphic,Memory,Query,QueryTask,SimpleFillSymbol,SimpleLineSymbol,ColorDojo,registry,FilteringSelect,Message,on)
+    ``` 
+    function(declare,BaseWidget,_WidgetsInTemplateMixin,graphicsUtils,Graphic,Memory,Query,QueryTask,
+    SimpleFillSymbol,SimpleLineSymbol,ColorDojo,registry,FilteringSelect,Message,on)
     ```
     
 9) Modify the declare line from return declare([BaseWidget], { to the text here below.
